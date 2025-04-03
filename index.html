@@ -16,20 +16,20 @@
       font-family: 'Arial Narrow', sans-serif;
       color: white;
       overflow: hidden;
+      text-align: center;
     }
 
     .image-container {
-      width: 80%; /* Imposta la larghezza dell'immagine */
+      width: 50vw; /* Larghezza dell'immagine in base alla larghezza della finestra */
       max-width: 600px; /* Larghezza massima */
       height: auto;
-      margin-bottom: 30px; /* Aumentato lo spazio tra immagine e scritta upload */
+      margin-bottom: 5vh; /* Spazio tra l'immagine e il testo */
     }
 
     .upload {
-      font-size: 36px; /* Aumentato il font per "upload" */
+      font-size: 5vw; /* Dimensione del font in base alla larghezza della finestra */
       opacity: 0;
-      animation: blink 1.5s infinite; /* Animazione di lampeggio */
-      text-align: center; /* Allinea la scritta al centro */
+      animation: blink 1.5s infinite;
     }
 
     @keyframes blink {
@@ -41,6 +41,28 @@
       }
       100% {
         opacity: 0;
+      }
+    }
+
+    /* Media query per tablet (schermi tra 600px e 1024px) */
+    @media (max-width: 1024px) {
+      .image-container {
+        width: 70vw; /* Immagine più grande su schermi più piccoli */
+      }
+
+      .upload {
+        font-size: 6vw; /* Aumenta la dimensione del testo sui dispositivi più piccoli */
+      }
+    }
+
+    /* Media query per smartphone (schermi fino a 600px) */
+    @media (max-width: 600px) {
+      .image-container {
+        width: 80vw; /* Immagine ancora più grande su schermi molto piccoli */
+      }
+
+      .upload {
+        font-size: 8vw; /* Testo ancora più grande per smartphone */
       }
     }
   </style>

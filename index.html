@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immagine PNG + Upload</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Arial Narrow', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    .image-container {
+      width: 80%; /* Imposta la larghezza dell'immagine */
+      max-width: 600px; /* Larghezza massima */
+      height: auto;
+      margin-bottom: 30px; /* Aumentato lo spazio tra immagine e scritta upload */
+    }
+
+    .upload {
+      font-size: 36px; /* Aumentato il font per "upload" */
+      opacity: 0;
+      animation: blink 1.5s infinite; /* Animazione di lampeggio */
+      text-align: center; /* Allinea la scritta al centro */
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contenitore per l'immagine PNG -->
+  <div class="image-container">
+    <img src="D:\DeJob\SITO\1x\logo.png" alt="Logo" /> <!-- Sostituisci con il percorso dell'immagine PNG -->
+  </div>
+
+  <!-- Scritta lampeggiante "upload" -->
+  <div class="upload">upload</div>
+
+</body>
+</html>

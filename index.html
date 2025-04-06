@@ -23,53 +23,12 @@
       width: 50vw; /* Larghezza dell'immagine in base alla larghezza della finestra */
       max-width: 600px; /* Larghezza massima */
       height: auto;
-      margin-bottom: 5vh; /* Spazio tra l'immagine e il testo */
-    }
-
-    .upload {
-      font-size: 5vw; /* Dimensione del font in base alla larghezza della finestra */
-      opacity: 0;
-      animation: blink 1.5s infinite;
-    }
-
-    @keyframes blink {
-      0% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
-    /* Media query per tablet (schermi tra 600px e 1024px) */
-    @media (max-width: 1024px) {
-      .image-container {
-        width: 70vw; /* Immagine più grande su schermi più piccoli */
-      }
-
-      .upload {
-        font-size: 6vw; /* Aumenta la dimensione del testo sui dispositivi più piccoli */
-      }
-    }
-
-    /* Media query per smartphone (schermi fino a 600px) */
-    @media (max-width: 600px) {
-      .image-container {
-        width: 80vw; /* Immagine ancora più grande su schermi molto piccoli */
-      }
-
-      .upload {
-        font-size: 8vw; /* Testo ancora più grande per smartphone */
-      }
     }
   </style>
 </head>
 <body>
     <a href="servizi.html">
-        <img src="logo.png" alt="dejob">
+        <img src="logo.png" alt="dejob" class="image-container">
     </a>
 </body>
 </html>

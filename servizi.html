@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servizi</title>
+    <title>dejob.it/servizi</title>
     <style>
         body {
             background-color: black;
@@ -19,6 +19,9 @@
         }
         .logo {
             margin-bottom: 5vh;
+            width: 50vw; /* Larghezza del logo in base alla larghezza della finestra */
+            max-width: 600px; /* Larghezza massima */
+            height: auto;
         }
         .container {
             width: 80%;
@@ -41,7 +44,7 @@
         .subcategory {
             display: none;
             margin-left: 20px;
-            margin-top: 10px;        }
+        }
         .subcategory p {
             margin: 5px 0;
             text-align: left; /* Allinea il testo delle sottocategorie a sinistra */
@@ -59,8 +62,8 @@
     </script>
 </head>
 <body>
-    <a href="index.html" class="logo">
-        <img src="logo.png" alt="dejob">
+    <a href="index.html">
+        <img src="logo.png" alt="dejob" class="logo">
     </a>
     <div class="container">
         <div class="category">
@@ -107,12 +110,14 @@
                 <p>Realizzazione modelli fisici</p>
             </div>
         </div>
-<div class="category">
-    <h2 onclick="toggleSubcategories('contatti')">Contatti</h2>
-    <div class="subcategory" id="contatti">
-        <p>Email: info@dejob.it</p>
-        <p>Telefono: +39 348 916 5934 / +39 346 621 2798</p>
-        <p>Indirizzo: <strong>Roma</strong> - Via Trionfale, 11886;  <strong>Milano</strong> - Via Mecenate, 6</p>
+        <div class="category">
+            <h2 onclick="toggleSubcategories('contatti')">Contatti</h2>
+            <div class="subcategory" id="contatti">
+                <p>Email: info@dejob.it</p>
+                <p>Telefono: +39 348 916 5934 / +39 346 621 2798</p>
+                <p>Indirizzo: <strong>Roma</strong> - Via Trionfale, 11886;  <strong>Milano</strong> - Via Mecenate, 6</p>
+            </div>
+        </div>
     </div>
-</div></body>
+</body>
 </html>

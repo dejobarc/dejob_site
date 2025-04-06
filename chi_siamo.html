@@ -49,7 +49,8 @@
             if (index < text.length) {
                 container.textContent += text[index];
                 index++;
-                setTimeout(typeText, 80); // Velocità di scrittura (50ms per lettera)
+                const delay = Math.random() * (120-30) + 60; // Ritardo casuale tra 30ms e 120ms
+                setTimeout(typeText, delay);
             }
         }
 

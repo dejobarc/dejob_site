@@ -13,21 +13,23 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start; /* Allinea il contenuto a sinistra */
             justify-content: flex-start;
-            text-align: center;
+            text-align: left; /* Allinea il testo a sinistra */
+            padding: 20px; /* Aggiunge un margine interno per distanziare il contenuto dai bordi */
         }
         .logo {
+            margin-top: 20px; /* Margine superiore per maggiore leggibilità */
             margin-bottom: 5vh;
-            width: 12vw; /* Larghezza del logo in base alla larghezza della finestra */
-            max-width: 150px; /* Larghezza massima */
+            width: 25vw; /* Ridotto alla metà della larghezza originale */
+            max-width: 300px; /* Larghezza massima */
             height: auto;
         }
         .container {
             width: 80%;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Allinea le categorie a sinistra rispetto al logo */
+            align-items: flex-start; /* Allinea le categorie a sinistra */
         }
         .category {
             margin-bottom: 20px;
@@ -36,14 +38,15 @@
         .category h2 {
             cursor: pointer;
             margin: 0;
-            padding: 0%;
+            padding: 10px;
             background-color: #000000;
             border: 1px solid #000000;
             text-align: left; /* Allinea il testo delle categorie a sinistra */
         }
         .subcategory {
             display: none;
-            margin-left: 20px;
+            margin-left: 20px; /* Margine per distanziare le sottocategorie */
+            margin-top: 10px;
         }
         .subcategory p {
             margin: 5px 0;

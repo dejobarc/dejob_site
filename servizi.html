@@ -7,8 +7,8 @@
     <style>
         body {
             background-color: black;
-            color: white;
-            font-family: "Arial Narrow", Arial, sans-serif;
+            color: rgb(255, 255, 255);
+            font-family: "Arial Narrow", Arial, condensed;
             margin: 0;
             height: 100vh;
             display: flex;
@@ -16,7 +16,7 @@
             align-items: flex-start; /* Allinea il contenuto a sinistra */
             justify-content: flex-start;
             text-align: left; /* Allinea il testo a sinistra */
-            padding: 20px; /* Aggiunge un margine interno per distanziare il contenuto dai bordi */
+            padding: 30px; /* Aggiunge un margine interno per distanziare il contenuto dai bordi */
         }
         .logo {
             margin-top: 20px; /* Margine superiore per maggiore leggibilità */
@@ -32,25 +32,28 @@
             align-items: flex-start; /* Allinea le categorie a sinistra */
         }
         .category {
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             width: 100%; /* Assicura che le categorie occupino tutta la larghezza disponibile */
+            font-size: 12px; /* Cambia la dimensione del testo delle categorie */
         }
         .category h2 {
             cursor: pointer;
             margin: 0;
-            padding: 10px;
+            padding: 3px;
             background-color: #000000;
-            border: 1px solid #000000;
+            border: 0px solid #000000;
             text-align: left; /* Allinea il testo delle categorie a sinistra */
         }
         .subcategory {
             display: none;
-            margin-left: 20px; /* Margine per distanziare le sottocategorie */
-            margin-top: 10px;
+            margin-left: 0; /* Rimuove il margine sinistro */
+            margin-top: 10px; /* Aggiunge un margine superiore per separarle visivamente */
+            padding-left: 10px; /* Opzionale: aggiunge un'indentazione per distinguere visivamente le sottocategorie */
         }
         .subcategory p {
             margin: 5px 0;
             text-align: left; /* Allinea il testo delle sottocategorie a sinistra */
+            font-size: 14px; /* Cambia la dimensione del testo delle sottocategorie */
         }
     </style>
     <script>

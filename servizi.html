@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servizi</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Arial Narrow", Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 5vh;
+        }
+        .container {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Allinea le categorie a sinistra rispetto al logo */
+        }
+        .category {
+            margin-bottom: 20px;
+            width: 100%; /* Assicura che le categorie occupino tutta la larghezza disponibile */
+        }
+        .category h2 {
+            cursor: pointer;
+            margin: 0;
+            padding: 0%;
+            background-color: #000000;
+            border: 1px solid #000000;
+            text-align: left; /* Allinea il testo delle categorie a sinistra */
+        }
+        .subcategory {
+            display: none;
+            margin-left: 20px;
+            margin-top: 10px;        }
+        .subcategory p {
+            margin: 5px 0;
+            text-align: left; /* Allinea il testo delle sottocategorie a sinistra */
+        }
+    </style>
+    <script>
+        function toggleSubcategories(id) {
+            const subcategory = document.getElementById(id);
+            if (subcategory.style.display === "none" || subcategory.style.display === "") {
+                subcategory.style.display = "block";
+            } else {
+                subcategory.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html" class="logo">
+        <img src="logo.png" alt="dejob">
+    </a>
+    <div class="container">
+        <div class="category">
+            <h2 onclick="toggleSubcategories('progettazione')">Progettazione</h2>
+            <div class="subcategory" id="progettazione">
+                <p>Architettonica</p>
+                <p>Urbana</p>
+                <p>Design del prodotto</p>
+            </div>
+        </div>
+        <div class="category">
+            <h2 onclick="toggleSubcategories('gestione')">Gestione</h2>
+            <div class="subcategory" id="gestione">
+                <p>Pratiche edilizie, catastali ed energetiche</p>
+                <p>Pratiche antincendio</p>
+                <p>Computazione</p>
+                <p>Contabilità</p>
+            </div>
+        </div>
+        <div class="category">
+            <h2 onclick="toggleSubcategories('consulenza')">Consulenza</h2>
+            <div class="subcategory" id="consulenza">
+                <p>BIM</p>
+                <p>Forniture</p>
+                <p>Appalti e gare tecniche</p>
+            </div>
+        </div>
+        <div class="category">
+            <h2 onclick="toggleSubcategories('ricerca')">Ricerca</h2>
+            <div class="subcategory" id="ricerca">
+                <p>Sviluppo d'idee</p>
+                <p>Intelligenza artificiale</p>
+                <p>Concorsi d'architettura</p>
+            </div>
+        </div>
+        <div class="category">
+            <h2 onclick="toggleSubcategories('altro')">+</h2>
+            <div class="subcategory" id="altro">
+                <p>Modellazione tridimensionale</p>
+                <p>Renderizzazione</p>
+                <p>Post-produzione</p>
+                <p>Rilievo</p>
+                <p>Stampa 3D</p>
+                <p>Realizzazione modelli fisici</p>
+            </div>
+        </div>
+<div class="category">
+    <h2 onclick="toggleSubcategories('contatti')">Contatti</h2>
+    <div class="subcategory" id="contatti">
+        <p>Email: info@dejob.it</p>
+        <p>Telefono: +39 348 916 5934 / +39 346 621 2798</p>
+        <p>Indirizzo: <strong>Roma</strong> - Via Trionfale, 11886;  <strong>Milano</strong> - Via Mecenate, 6</p>
+    </div>
+</div></body>
+</html>

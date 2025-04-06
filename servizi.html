@@ -13,47 +13,46 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Allinea il contenuto a sinistra */
+            align-items: flex-start;
             justify-content: flex-start;
-            text-align: left; /* Allinea il testo a sinistra */
-            padding: 30px; /* Aggiunge un margine interno per distanziare il contenuto dai bordi */
+            text-align: left;
+            padding: 30px;
         }
         .logo {
-            margin-top: 20px; /* Margine superiore per maggiore leggibilità */
-            margin-bottom: 20px; /* Margine inferiore per separare il logo dalle categorie */
-            width: 20vw; /* Larghezza del logo */
-            max-width: 200px; /* Larghezza massima */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 20vw;
+            max-width: 200px;
             height: auto;
         }
         .container {
             width: 80%;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Allinea le categorie a sinistra */
+            align-items: flex-start;
         }
         .category {
             margin-bottom: 0px;
-            width: 100%; /* Assicura che le categorie occupino tutta la larghezza disponibile */
-            font-size: 12px; /* Cambia la dimensione del testo delle categorie */
+            width: 100%;
+            font-size: 12px;
         }
         .category h2 {
             cursor: pointer;
             margin: 0;
-            padding: 3px;
+            padding: 0; /* Rimuove il padding per un allineamento preciso */
             background-color: #000000;
-            border: 0px solid #000000;
-            text-align: left; /* Allinea il testo delle categorie a sinistra */
+            border: 0cap solid #000000;
+            text-align: left;
         }
         .subcategory {
             display: none;
-            margin-left: 0; /* Rimuove il margine sinistro */
-            margin-top: 10px; /* Aggiunge un margine superiore per separarle visivamente */
-            padding-left: 10px; /* Opzionale: aggiunge un'indentazione per distinguere visivamente le sottocategorie */
+            margin: 0; /* Rimuove il margine per allineare con le categorie */
+            padding: 0; /* Rimuove il padding per un allineamento preciso */
         }
         .subcategory p {
-            margin: 5px 0;
-            text-align: left; /* Allinea il testo delle sottocategorie a sinistra */
-            font-size: 14px; /* Cambia la dimensione del testo delle sottocategorie */
+            margin: 0; /* Rimuove il margine per allineare il testo */
+            text-align: left;
+            font-size: 14px;
         }
     </style>
     <script>

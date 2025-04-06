@@ -20,16 +20,38 @@
     }
 
     .image-container {
-      width: 20vw; /* Larghezza dell'immagine in base alla larghezza della finestra */
-      max-width: 250px; /* Larghezza massima */
-      height: auto;
+      display: inline-block; /* Adatta il contenitore esattamente alle dimensioni del logo */
+      width: 150px; /* Imposta una larghezza specifica */
+      height: auto; /* Mantiene le proporzioni del logo */
+    }
+
+    .links {
+      margin-top: 10px; /* Spazio tra il logo e i link */
+      display: flex;
+      justify-content: space-between; /* Posiziona i link ai lati opposti */
+      width: 150px; /* Larghezza uguale a quella del logo */
+      gap: ; /* Spazio tra i link */
+    }
+
+    .links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: ;
+      transition: color 1s;
+    }
+
+    .links a:hover {
+      color: rgb(157, 157, 157); /* Cambia colore al passaggio del mouse */
     }
   </style>
 </head>
 <body>
-    <a href="servizi.html">
-        <img src="logo.png" alt="dejob" class="image-container">
-    </a>
+    <img src="logo.png" alt="dejob" class="image-container">
+    <div class="links">
+        <a href="chi_siamo.html" style="text-align:left;">Chi siamo</a>
+        <a href="servizi.html" style="text-align: right;">Servizi</a>
+    </div>
 </body>
 </html>
 

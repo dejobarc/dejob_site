@@ -31,30 +31,30 @@
             max-width: 800px; /* Limita la larghezza del testo per una migliore leggibilità */
             white-space: pre-wrap; /* Mantiene gli spazi e i ritorni a capo */
         }
+        .text-container p {
+            text-indent: 0; /* Rimuove il rientro all'inizio dei paragrafi */
+        }
     </style>
 </head>
 <body>
     <a href="index.html">
         <img src="Logo_Bianco.png" alt="dejob" class="image-container">
     </a>
-    <div class="text-container" id="text-container"></div>
+    <div class="text-container" id="text-container">
+Lo studio di architettura <strong>deJob</strong>, nasce dall’incontro tra professionisti con competenze trasversali ed una visione condivisa: <em>affrontare la progettazione architettonica e urbana come un processo culturale, capace di generare un valore duraturo per le persone e per i luoghi. </em>
 
-    <script>
-        const text = `Stiamo scegliendo le parole giuste... tra un portale in pietra, il silenzio di una sinfonia interrotta, una scala che non porta da nessuna parte, un caffè troppo caldo, un foglio di carta sgualcito, il marmo di Carrara, il vento tra le guglie, un accordo minore che non arriva mai al suo apice, una caffettiera che borbotta, la luce che entra da una finestra e non sa dove andare, il suono di un violino troppo lontano, una città che non smette di respirare, il profumo della carta nei libri antichi, il movimento di una penna che cerca di tenere il passo con il pensiero, una sedia troppo comoda, il rumore di un passo che rimbomba nelle gallerie, un'inquadratura perfetta che non c’è mai, l'ombra di una chitarra acustica, l’odore del legno lucido, l’eco di una poesia recitata sottovoce, il riflesso di un’architettura futurista in una pozzanghera, un metro che non trova mai la giusta misura, il rumore del gesso che scrive su una lavagna, l’attesa di una risposta che non arriva mai, un angolo che non sembra mai perfetto, l’increspatura di un dipinto che non vuol farsi definire, il ricordo di una strada che si perde in una nebbia, l’inaspettata melodia di un pianoforte, la polvere che si solleva da una scultura dimenticata, il suono di un’onda che non sa quando fermarsi, un libro aperto con troppe pagine segnate, il senso di un colpo di martello sulla pietra, il movimento delle onde su un tetto di vetro, l'inquietudine di una pausa troppo lunga, una macchia di colore sulla tela che racconta più di un quadro intero, il battito del cuore che accompagna ogni passo, il sorriso che si fa strada tra le parole, una stella che brilla di luce propria, una mano che scrive e poi cancella, il silenzio di un museo, una fila di sedie vuote, l'incontro tra la penna e la pagina, una città che cresce e poi si ferma, il rumore di un martello sulla metallo, una visione che sfuma nel buio, una biblioteca dove ogni libro racconta una storia diversa, il fruscio delle pagine di un quaderno, una corsa in salita che non sembra mai finire, l’alba che illumina un paesaggio che non smette di cambiare... e poi le parole... quelle giuste... sono ancora tutte da scrivere.`;
-        
-        const container = document.getElementById('text-container');
-        let index = 0;
+I fondatori sono gli architetti <strong> Lorenzo Leoncini</strong> e <strong> Alessandro Di Lorenzo</strong>, la cui formazione nasce dall’incontro tra percorsi di ricerca accademica e collaborazioni con studi di progettazione affermati, in Italia e a livello internazionale.
 
-        function typeText() {
-            if (index < text.length) {
-                container.textContent += text[index];
-                index++;
-                const delay = Math.random() * (120-30) + 60; // Ritardo casuale tra 30ms e 120ms
-                setTimeout(typeText, delay);
-            }
-        }
+<strong>L’Arch.  Alessandro Di Lorenzo </strong> ha maturato le esperienze all’interno di studi di architettura di rilievo in Italia, come Archea a Firenze, Progetto CMR a Milano ed ATI Project a Pisa, contribuendo a sviluppare progetti complessi con attenzione alla qualità degli spazi costruiti, alla sostenibilità dei vari processi ed ai coordinamenti tecnici. 
 
-        typeText();
-    </script>
+<strong>L’Arch. PhD Lorenzo Leoncini </strong> ha affiancato alla propria attività progettuale un percorso di ricerca dottorale presso la School of Advanced Studies di Camerino e il Nieuwe Instituut di Rotterdam, sviluppando una visione critica e teoricamente solida sui temi dell’abitare, della città e della forma architettonica come espressione culturale e sociale.
+
+Queste expertise multidisciplinari – accademiche e professionali – consentono di affrontare con consapevolezza ogni fase del lavoro, interpretando le esigenze dei committenti e valorizzando i contesti degli interventi: urbani, paesaggistici e architettonici. 
+La metodologia progettuale dello Studio è un processo fondato sull’ascolto, sull’integrazione delle competenze e sulla continua ricerca. Tale approccio coniuga rigore e sensibilità progettuale, unendo competenza tecnica e apertura culturale, con l’obiettivo di generare spazi capaci di raccontare la storia di chi li abita e del luogo in cui si inseriscono. 
+
+Lo studio deJob è una realtà giovane e in crescita, aperta al dialogo e alla costruzione di collaborazioni fondate sulla qualità del progetto e sulla condivisione di visioni, per questo è a disposizione per qualsiasi ulteriore informazione o per valutare eventuali occasioni di incontro di approfondimento.
+
+<strong><em>Lo Staff di deJob</em></strong>
+    </div>
 </body>
 </html>

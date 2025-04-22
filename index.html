@@ -43,6 +43,47 @@
     .links a:hover {
       color: rgb(157, 157, 157); /* Cambia colore al passaggio del mouse */
     }
+
+    .column {
+      margin-top: 5px; /* Spazio tra i link principali e le colonne */
+      display: flex;
+      justify-content: space-between; /* Posiziona le colonne ai lati opposti */
+      width: 200px; /* Larghezza uguale a quella del logo */
+    }
+
+    .column div {
+      display: flex;
+      flex-direction: column; /* Dispone i contenuti in colonna */
+      gap: 5px; /* Spazio tra i testi o link */
+    }
+
+    .column div a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px; /* Dimensione del font per i nuovi link */
+      font-weight: bold;
+    }
+
+    .column div a:hover {
+      color: rgb(157, 157, 157); /* Cambia colore al passaggio del mouse */
+    }
+
+    .text-container {
+      margin-top: 20px; /* Spazio sopra il testo */
+      font-size: 14px; /* Dimensione del testo */
+      font-weight: normal;
+      color: white;
+      display: none; /* Nasconde il testo inizialmente */
+      text-align: left; /* Allinea il testo a sinistra */
+position: absolute; /* Posiziona il testo in modo assoluto */
+      left: calc(50% - 100px); /* Allinea il testo alla colonna di sinistra */
+      top: 60%; /* Posiziona il testo sotto i link */
+    }
+
+    .subcategory p {
+        margin: 0; /* Rimuove il margine predefinito */
+        line-height: 1.3; /* Imposta l'altezza della linea per gestire lo spazio tra le righe */
+    }
   </style>
 </head>
 <body>
@@ -51,6 +92,37 @@
         <a href="chi_siamo.html" style="text-align:left;">Chi siamo</a>
         <a href="servizi.html" style="text-align: right;">Servizi</a>
     </div>
+    <div class="column">
+        <div class="left-column">
+            <a href="#" id="contatti-link">Contatti</a>
+        </div>
+        <div class="right-column">
+        </div>
+    </div>
+    <div class="text-container" id="text-container">
+        <div class="category">
+            <div class="subcategory">
+                <p>Email: info@dejob.it</p>
+                <p>Telefono: +39 348 916 5934 / +39 346 621 2798</p>
+                <p>Indirizzo: <strong>Roma</strong> - Via Trionfale, 11886; <strong>Milano</strong> - Via Mecenate, 6</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      const contattiLink = document.getElementById('contatti-link');
+      const textContainer = document.getElementById('text-container');
+
+      contattiLink.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita il comportamento predefinito del link
+        // Alterna la visibilità del testo
+        if (textContainer.style.display === 'block') {
+          textContainer.style.display = 'none'; // Nasconde il testo
+        } else {
+          textContainer.style.display = 'block'; // Mostra il testo
+        }
+      });
+    </script>
 </body>
 </html>
 

@@ -20,69 +20,70 @@
     }
 
     .image-container {
-      display: inline-block; /* Adatta il contenitore esattamente alle dimensioni del logo */
-      width: 200px; /* Imposta una larghezza specifica */
-      height: auto; /* Mantiene le proporzioni del logo */
+      display: inline-block;
+      width: 200px;
+      height: auto;
     }
 
     .links {
-      margin-top: 10px; /* Spazio tra il logo e i link */
+      margin-top: 10px;
       display: flex;
-      justify-content: space-between; /* Posiziona i link ai lati opposti */
-      width: 200px; /* Larghezza uguale a quella del logo */
+      justify-content: space-between;
+      width: 200px;
     }
 
     .links a {
       color: white;
       text-decoration: none;
-      font-size: 16px; /* Dimensione del font */
+      font-size: 16px;
       transition: color 1s;
-      font-weight: bold; /* Grassetto per i link */
+      font-weight: bold;
     }
 
     .links a:hover {
-      color: rgb(157, 157, 157); /* Cambia colore al passaggio del mouse */
+      color: rgb(157, 157, 157);
     }
 
     .column {
-      margin-top: 5px; /* Spazio tra i link principali e le colonne */
+      margin-top: 5px;
       display: flex;
-      justify-content: space-between; /* Posiziona le colonne ai lati opposti */
-      width: 200px; /* Larghezza uguale a quella del logo */
+      justify-content: space-between;
+      width: 200px;
     }
 
     .column div {
       display: flex;
-      flex-direction: column; /* Dispone i contenuti in colonna */
-      gap: 5px; /* Spazio tra i testi o link */
+      flex-direction: column;
+      gap: 5px;
     }
 
     .column div a {
       color: white;
       text-decoration: none;
-      font-size: 16px; /* Dimensione del font per i nuovi link */
+      font-size: 16px;
       font-weight: bold;
     }
 
     .column div a:hover {
-      color: rgb(157, 157, 157); /* Cambia colore al passaggio del mouse */
+      color: rgb(157, 157, 157);
     }
 
     .text-container {
-      margin-top: 30px; /* Spazio sopra il testo */
-      font-size: 14px; /* Dimensione del testo */
+      margin-top: 10px;
+      font-size: 14px;
       font-weight: normal;
       color: white;
       display: none; /* Nasconde il testo inizialmente */
-      text-align: left; /* Allinea il testo a sinistra */
-position: absolute; /* Posiziona il testo in modo assoluto */
-      left: calc(50% - 100px); /* Allinea il testo alla colonna di sinistra */
-      top: 60%; /* Posiziona il testo sotto i link */
+      text-align: left;
+      position: relative; /* Posizionamento relativo per allineamento */
+      width: 200px; /* Stessa larghezza della colonna "Chi siamo" */
+      margin-left: 0; /* Allineato alla colonna di sinistra */
+      word-wrap: break-word; /* Evita la sovrapposizione del testo */
     }
 
     .subcategory p {
-        margin: 0; /* Rimuove il margine predefinito */
-        line-height: 1.3; /* Imposta l'altezza della linea per gestire lo spazio tra le righe */
+      margin: 0;
+      line-height: 1.5; /* Migliora la leggibilità */
     }
   </style>
 </head>

@@ -9,8 +9,8 @@
             background-color: black;
             color: rgb(255, 255, 255);
             font-family: "Arial Narrow", Arial, condensed;
-            margin: 0; /* Rimuove margini predefiniti */
-            padding: 30px; /* Padding personalizzato */
+            margin: 0;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -19,37 +19,36 @@
         }
 
         .image-container {
-            display: block; /* Assicura che il logo sia trattato come un blocco */
+            display: block;
             width: 200px; /* Larghezza del logo */
-            height: auto; /* Mantiene le proporzioni */
-            margin-bottom: 10px; /* Rimuove lo spazio sotto il logo */
+            height: auto;
+            margin-bottom: 20px;
         }
 
         .content-container {
-            display: flex; /* Layout a due colonne */
-            align-items: flex-start; /* Allinea il contenuto in alto */
-            gap: 10px; /* Spazio tra il testo e l'immagine */
-            margin-top: 0px; /* Spazio controllato tra il logo e il contenitore */
+            display: flex;
+            flex-direction: column; /* Dispone immagine e testo in colonna */
+            align-items: flex-start; /* Allinea il contenuto a sinistra */
+            max-width: 500px; /* Nuova larghezza massima del contenitore */
+            width: 100%; /* Adatta la larghezza al contenitore */
+            gap: 20px; /* Spazio tra immagine e testo */
+        }
+
+        .image-top {
+            width: 500px; /* L'immagine occupa tutta la larghezza del contenitore */
+            max-height: auto; /* Altezza massima dell'immagine */
+            object-fit: cover; /* Adatta l'immagine senza distorsioni */
         }
 
         .text-container {
-            flex: 1; /* Occupa lo spazio disponibile a sinistra */
             font-size: 16px;
             line-height: 1.6;
-            max-width: 800px;
             white-space: pre-wrap;
-            
+            max-width: 900px; /* Nuova larghezza massima del testo */
         }
 
         .text-container p {
             text-indent: 0;
-            margin-top: 0px; /* Rimuove lo spazio sopra i paragrafi */
-        }
-
-        .image-right {
-            width: 300px; /* Larghezza dell'immagine */
-            height: auto; /* Mantiene le proporzioni */
-            margin-top: 10px; /* Spazio sopra l'immagine */
         }
     </style>
 </head>
@@ -58,7 +57,9 @@
         <img src="Logo_Bianco.png" alt="dejob" class="image-container">
     </a>
     <div class="content-container">
-        <div class="text-container" id="text-container">Lo studio di architettura <strong>deJob</strong>, nasce dall’incontro tra professionisti con competenze trasversali ed una visione condivisa: <em>affrontare la progettazione architettonica e urbana come un processo culturale, capace di generare un valore duraturo per le persone e per i luoghi.</em>
+        <img src="Foto profilo_BW.jpg" alt="Foto Architettura" class="image-top">
+        <div class="text-container" id="text-container">
+Lo studio di architettura <strong>deJob</strong>, nasce dall’incontro tra professionisti con competenze trasversali ed una visione condivisa: <em>affrontare la progettazione architettonica e urbana come un processo culturale, capace di generare un valore duraturo per le persone e per i luoghi.</em>
 
 I fondatori sono gli architetti <strong>Lorenzo Leoncini</strong> e <strong>Alessandro Di Lorenzo</strong>, la cui formazione nasce dall’incontro tra percorsi di ricerca accademica e collaborazioni con studi di progettazione affermati, in Italia e a livello internazionale.
 
@@ -74,7 +75,6 @@ Lo studio deJob è una realtà giovane e in crescita, aperta al dialogo e alla c
 
 <strong><em>Lo Staff di deJob</em></strong>
         </div>
-        <img src="Foto profilo_BW.jpg" alt="Foto Architettura" class="image-right">
     </div>
 </body>
 </html>

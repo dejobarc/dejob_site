@@ -9,20 +9,27 @@
             background-color: black;
             color: rgb(255, 255, 255);
             font-family: "Arial Narrow", Arial, condensed;
-            margin: 0;
-            height: 100vh;
+            margin: 0; /* Rimuove margini predefiniti */
+            padding: 30px; /* Padding personalizzato */
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             text-align: left;
-            padding: 30px;
+        }
+
+        .image-container {
+            display: block; /* Assicura che il logo sia trattato come un blocco */
+            width: 200px; /* Larghezza del logo */
+            height: auto; /* Mantiene le proporzioni */
+            margin-bottom: 10px; /* Rimuove lo spazio sotto il logo */
         }
 
         .content-container {
             display: flex; /* Layout a due colonne */
             align-items: flex-start; /* Allinea il contenuto in alto */
-            gap: 20px; /* Spazio tra il testo e l'immagine */
+            gap: 10px; /* Spazio tra il testo e l'immagine */
+            margin-top: 0px; /* Spazio controllato tra il logo e il contenitore */
         }
 
         .text-container {
@@ -31,22 +38,18 @@
             line-height: 1.6;
             max-width: 800px;
             white-space: pre-wrap;
+            
         }
 
         .text-container p {
             text-indent: 0;
+            margin-top: 0px; /* Rimuove lo spazio sopra i paragrafi */
         }
 
         .image-right {
             width: 300px; /* Larghezza dell'immagine */
             height: auto; /* Mantiene le proporzioni */
-            margin-top: 30px; /* Spazio sopra l'immagine */
-        }
-
-        .image-container {
-            width: 200px; /* Larghezza del logo */
-            height: auto; /* Mantiene le proporzioni */
-            margin-bottom: 10px; /* Spazio sotto il logo */
+            margin-top: 10px; /* Spazio sopra l'immagine */
         }
     </style>
 </head>
@@ -55,8 +58,7 @@
         <img src="Logo_Bianco.png" alt="dejob" class="image-container">
     </a>
     <div class="content-container">
-        <div class="text-container" id="text-container">
-Lo studio di architettura <strong>deJob</strong>, nasce dall’incontro tra professionisti con competenze trasversali ed una visione condivisa: <em>affrontare la progettazione architettonica e urbana come un processo culturale, capace di generare un valore duraturo per le persone e per i luoghi.</em>
+        <div class="text-container" id="text-container">Lo studio di architettura <strong>deJob</strong>, nasce dall’incontro tra professionisti con competenze trasversali ed una visione condivisa: <em>affrontare la progettazione architettonica e urbana come un processo culturale, capace di generare un valore duraturo per le persone e per i luoghi.</em>
 
 I fondatori sono gli architetti <strong>Lorenzo Leoncini</strong> e <strong>Alessandro Di Lorenzo</strong>, la cui formazione nasce dall’incontro tra percorsi di ricerca accademica e collaborazioni con studi di progettazione affermati, in Italia e a livello internazionale.
 

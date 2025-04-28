@@ -13,26 +13,40 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Allinea il contenuto a sinistra */
-            align-items: flex-start; /* Allinea il contenuto in alto */
+            justify-content: flex-start;
+            align-items: flex-start;
             text-align: left;
-            padding: 30px; /* Margine interno uguale alla pagina servizi.html */
+            padding: 30px;
         }
-        .image-container {
-            display: inline-block; /* Adatta il contenitore esattamente alle dimensioni del logo */
-            width: 200px; /* Imposta una larghezza specifica */
-            height: auto; /* Mantiene le proporzioni del logo */
-            margin-bottom: 5px; /* Spazio tra il logo e il testo */
+
+        .content-container {
+            display: flex; /* Layout a due colonne */
+            align-items: flex-start; /* Allinea il contenuto in alto */
+            gap: 20px; /* Spazio tra il testo e l'immagine */
         }
+
         .text-container {
-            margin-top: 0px; /* Spazio aggiuntivo sopra il testo */
-            font-size: 16px; /* Dimensione del testo */
-            line-height: 1.6; /* Altezza della linea per migliorare la leggibilità */
-            max-width: 800px; /* Limita la larghezza del testo per una migliore leggibilità */
-            white-space: pre-wrap; /* Mantiene gli spazi e i ritorni a capo */
+            flex: 1; /* Occupa lo spazio disponibile a sinistra */
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 800px;
+            white-space: pre-wrap;
         }
+
         .text-container p {
-            text-indent: 0; /* Rimuove il rientro all'inizio dei paragrafi */
+            text-indent: 0;
+        }
+
+        .image-right {
+            width: 300px; /* Larghezza dell'immagine */
+            height: auto; /* Mantiene le proporzioni */
+            margin-top: 30px; /* Spazio sopra l'immagine */
+        }
+
+        .image-container {
+            width: 200px; /* Larghezza del logo */
+            height: auto; /* Mantiene le proporzioni */
+            margin-bottom: 10px; /* Spazio sotto il logo */
         }
     </style>
 </head>
@@ -40,21 +54,25 @@
     <a href="index.html">
         <img src="Logo_Bianco.png" alt="dejob" class="image-container">
     </a>
-    <div class="text-container" id="text-container">
-Lo studio di architettura <strong>deJob</strong>, nasce dall’incontro tra professionisti con competenze trasversali ed una visione condivisa: <em>affrontare la progettazione architettonica e urbana come un processo culturale, capace di generare un valore duraturo per le persone e per i luoghi. </em>
+    <div class="content-container">
+        <div class="text-container" id="text-container">
+Lo studio di architettura <strong>deJob</strong>, nasce dall’incontro tra professionisti con competenze trasversali ed una visione condivisa: <em>affrontare la progettazione architettonica e urbana come un processo culturale, capace di generare un valore duraturo per le persone e per i luoghi.</em>
 
-I fondatori sono gli architetti <strong> Lorenzo Leoncini</strong> e <strong> Alessandro Di Lorenzo</strong>, la cui formazione nasce dall’incontro tra percorsi di ricerca accademica e collaborazioni con studi di progettazione affermati, in Italia e a livello internazionale.
+I fondatori sono gli architetti <strong>Lorenzo Leoncini</strong> e <strong>Alessandro Di Lorenzo</strong>, la cui formazione nasce dall’incontro tra percorsi di ricerca accademica e collaborazioni con studi di progettazione affermati, in Italia e a livello internazionale.
 
-<strong>L’Arch.  Alessandro Di Lorenzo </strong> ha maturato le esperienze all’interno di studi di architettura di rilievo in Italia, come Archea a Firenze, Progetto CMR a Milano ed ATI Project a Pisa, contribuendo a sviluppare progetti complessi con attenzione alla qualità degli spazi costruiti, alla sostenibilità dei vari processi ed ai coordinamenti tecnici. 
+<strong>L’Arch. Alessandro Di Lorenzo</strong> ha maturato le esperienze all’interno di studi di architettura di rilievo in Italia, come Archea a Firenze, Progetto CMR a Milano ed ATI Project a Pisa, contribuendo a sviluppare progetti complessi con attenzione alla qualità degli spazi costruiti, alla sostenibilità dei vari processi ed ai coordinamenti tecnici.
 
-<strong>L’Arch. PhD Lorenzo Leoncini </strong> ha affiancato alla propria attività progettuale un percorso di ricerca dottorale presso la School of Advanced Studies di Camerino e il Nieuwe Instituut di Rotterdam, sviluppando una visione critica e teoricamente solida sui temi dell’abitare, della città e della forma architettonica come espressione culturale e sociale.
+<strong>L’Arch. PhD Lorenzo Leoncini</strong> ha affiancato alla propria attività progettuale un percorso di ricerca dottorale presso la School of Advanced Studies di Camerino e il Nieuwe Instituut di Rotterdam, sviluppando una visione critica e teoricamente solida sui temi dell’abitare, della città e della forma architettonica come espressione culturale e sociale.
 
-Queste expertise multidisciplinari – accademiche e professionali – consentono di affrontare con consapevolezza ogni fase del lavoro, interpretando le esigenze dei committenti e valorizzando i contesti degli interventi: urbani, paesaggistici e architettonici. 
-La metodologia progettuale dello Studio è un processo fondato sull’ascolto, sull’integrazione delle competenze e sulla continua ricerca. Tale approccio coniuga rigore e sensibilità progettuale, unendo competenza tecnica e apertura culturale, con l’obiettivo di generare spazi capaci di raccontare la storia di chi li abita e del luogo in cui si inseriscono. 
+Queste expertise multidisciplinari – accademiche e professionali – consentono di affrontare con consapevolezza ogni fase del lavoro, interpretando le esigenze dei committenti e valorizzando i contesti degli interventi: urbani, paesaggistici e architettonici.
+
+La metodologia progettuale dello Studio è un processo fondato sull’ascolto, sull’integrazione delle competenze e sulla continua ricerca. Tale approccio coniuga rigore e sensibilità progettuale, unendo competenza tecnica e apertura culturale, con l’obiettivo di generare spazi capaci di raccontare la storia di chi li abita e del luogo in cui si inseriscono.
 
 Lo studio deJob è una realtà giovane e in crescita, aperta al dialogo e alla costruzione di collaborazioni fondate sulla qualità del progetto e sulla condivisione di visioni, per questo è a disposizione per qualsiasi ulteriore informazione o per valutare eventuali occasioni di incontro di approfondimento.
 
 <strong><em>Lo Staff di deJob</em></strong>
+        </div>
+        <img src="Foto profilo_BW.jpg" alt="Foto Architettura" class="image-right">
     </div>
 </body>
 </html>

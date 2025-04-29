@@ -17,6 +17,20 @@
             align-items: flex-start;
             text-align: left;
         }
+        
+        footer {
+        position: relative; /* Fissa il footer rispetto alla finestra */
+        bottom: 0; /* Posiziona il footer in basso */
+        left: 50%; /* Centra il footer orizzontalmente */
+        transform: translateX(-50%); /* Corregge il centraggio */
+        text-align: center;
+        color: white;
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        font-size: small;
+        background-color: black; /* Sfondo nero per separarlo dal contenuto */
+        padding: 10px; /* Aggiunge spazio interno */
+        width: auto; /* Adatta la larghezza al contenuto */
+    }
 
         .image-container {
             display: block;
@@ -66,6 +80,13 @@
             .image-right {
                 max-width: 100%; /* I contenitori occupano tutta la larghezza */
             }
+
+            footer {
+            position: relative; /* Rimuove il posizionamento fisso */
+            margin-top: 20px; /* Aggiunge spazio sopra il footer */
+            width: 100%; /* Occupa tutta la larghezza dello schermo */
+            text-align: center; /* Centra il testo */
+        }
         }
     </style>
 </head>

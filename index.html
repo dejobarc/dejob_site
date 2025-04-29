@@ -19,6 +19,20 @@
       text-align: center;
     }
 
+    footer {
+        position: fixed; /* Fissa il footer rispetto alla finestra */
+        bottom: 0; /* Posiziona il footer in basso */
+        left: 50%; /* Centra il footer orizzontalmente */
+        transform: translateX(-50%); /* Corregge il centraggio */
+        text-align: center;
+        color: white;
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        font-size: small;
+        background-color: black; /* Sfondo nero per separarlo dal contenuto */
+        padding: 10px; /* Aggiunge spazio interno */
+        width: auto; /* Adatta la larghezza al contenuto */
+    }
+    
     .image-container {
       display: inline-block;
       width: 200px;
@@ -85,6 +99,42 @@
     .subcategory p {
         margin: 0;
         line-height: 1.5; /* Migliora la leggibilità */
+    }
+
+    /* Layout per dispositivi mobili */
+    @media (max-width: 768px) {
+        body {
+            flex-direction: column; /* Dispone gli elementi in colonna */
+            justify-content: flex-start; /* Allinea gli elementi dall'alto */
+            align-items: center; /* Centra gli elementi orizzontalmente */
+            overflow-y: auto; /* Aggiunge lo scorrimento verticale se necessario */
+            padding: 10px; /* Riduce il padding per dispositivi mobili */
+        }
+
+        .text-container {
+            position: static; /* Rimuove il posizionamento relativo */
+            width: 100%; /* Occupa tutta la larghezza dello schermo */
+            margin: 0; /* Rimuove i margini */
+            padding: 20px; /* Aggiunge spazio interno */
+            background-color: rgba(0, 0, 0, 0.9); /* Sfondo semi-trasparente */
+            color: white; /* Colore del testo */
+            text-align: center; /* Centra il testo */
+            box-shadow: none; /* Rimuove eventuali ombre */
+            word-wrap: break-word;
+        }
+
+        .subcategory p {
+            font-size: 14px; /* Riduce leggermente la dimensione del testo */
+            line-height: 1.5; /* Migliora la leggibilità */
+            margin-bottom: 10px; /* Aggiunge spazio tra le righe */
+        }
+
+        footer {
+            position: fixed; /* Rimuove il posizionamento fisso */
+            margin-top: 20px; /* Aggiunge spazio sopra il footer */
+            width: 100%; /* Occupa tutta la larghezza dello schermo */
+            text-align: center; /* Centra il testo */
+        }
     }
   </style>
 </head>

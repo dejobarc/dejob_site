@@ -18,6 +18,20 @@
             text-align: left;
         }
 
+        footer {
+        position: fixed; /* Fissa il footer rispetto alla finestra */
+        bottom: 0; /* Posiziona il footer in basso */
+        left: 50%; /* Centra il footer orizzontalmente */
+        transform: translateX(-50%); /* Corregge il centraggio */
+        text-align: center;
+        color: white;
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        font-size: small;
+        background-color: black; /* Sfondo nero per separarlo dal contenuto */
+        padding: 10px; /* Aggiunge spazio interno */
+        width: auto; /* Adatta la larghezza al contenuto */
+    }
+
         .image-container {
             display: block;
             width: 200px; /* Larghezza del logo */
@@ -71,7 +85,7 @@
 
         .image-slider {
             flex: 2; /* La colonna dello slider occupa lo spazio disponibile */
-            max-width: 600px; /* Larghezza massima dello slider */
+            max-width: 800px; /* Larghezza massima dello slider */
             height: 200px; /* Altezza fissa dello slider */
             display: flex;
             justify-content: center;
@@ -93,32 +107,46 @@
         .image-slider img.active {
             opacity: 1; /* Mostra solo l'immagine attiva */
         }
-
         /* Layout per dispositivi mobili */
         @media (max-width: 768px) {
-            .content-container {
-                flex-direction: column; /* Dispone le colonne in colonna (una sopra l'altra) */
-                align-items: center; /* Centra i contenitori */
-            }
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .categories-container {
-                width: 100%; /* La colonna delle categorie occupa tutta la larghezza */
-                max-width: none; /* Rimuove il limite massimo di larghezza */
-                margin-bottom: 20px; /* Aggiunge spazio sotto la colonna */
-            }
+    .categories-container {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 20px;
+    }
 
-            .image-slider {
-                width: 100%; /* Lo slider occupa tutta la larghezza dello schermo */
-                height: auto; /* L'altezza si adatta proporzionalmente */
-                max-width: none; /* Rimuove il limite massimo di larghezza */
-            }
+    .image-slider {
+        display: flex;
+        width: 100%;
+        height: 200px;
+        max-width: none;
+        margin-top: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 
-            .image-slider img {
-                width: 100%; /* L'immagine occupa tutta la larghezza dello slider */
-                height: auto; /* L'altezza si adatta proporzionalmente */
-                object-fit: cover; /* Adatta l'immagine senza distorsioni */
-            }
+    .image-slider img {
+        width: 100%; /* Corretto qui */
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-slider {
+    min-height: 200px;
+}
+
+    footer {
+            position: fixed; /* Rimuove il posizionamento fisso */
+            margin-top: 20px; /* Aggiunge spazio sopra il footer */
+            width: 100%; /* Occupa tutta la larghezza dello schermo */
+            text-align: center; /* Centra il testo */
         }
+
+}
     </style>
 </head>
 <body>
@@ -183,18 +211,21 @@
         }
 
         let currentImageIndex = 0;
-        const images = document.querySelectorAll('.image-slider img');
-        const totalImages = images.length;
+const images = document.querySelectorAll('.image-slider img');
+const totalImages = images.length;
 
-        function showNextImage() {
-            images[currentImageIndex].classList.remove('active');
-            currentImageIndex = (currentImageIndex + 1) % totalImages;
-            images[currentImageIndex].classList.add('active');
-        }
+// Funzione per mostrare l'immagine successiva con transizione
+function showNextImage() {
+    images[currentImageIndex].classList.remove('active'); // Rimuove la classe "active" dall'immagine attuale
+    currentImageIndex = (currentImageIndex + 1) % totalImages; // Incrementa l'indice
+    images[currentImageIndex].classList.add('active'); // Aggiunge la classe "active" alla nuova immagine
+}
 
-        setInterval(showNextImage, 5000);
+// Cambia immagine ogni 5 secondi
+setInterval(showNextImage, 5000);
 
-        document.getElementById('image-slider').addEventListener('click', showNextImage);
+// Aggiungi evento click per cambiare immagine manualmente
+document.getElementById('image-slider').addEventListener('click', showNextImage);
     </script>
     <footer style="text-align: center; color: white; font-family: 'Arial Narrow', Arial, sans-serif; margin-top: 20px;
     font-size: small;">

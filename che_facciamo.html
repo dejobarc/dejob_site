@@ -71,6 +71,30 @@
         height: auto;
         border-radius: 0px; /* Angoli arrotondati */
     }
+            .image-slider {
+            width: 100%; /* Contenitore delle immagini sulla destra */
+            height: 100%;
+            display: absolute;
+            justify-content: flex-start;
+            align-items: flex-start;
+            position: absolute;
+            margin-left: 400px; /* Sposta il contenitore a destra */
+            top: 180px; /* Sposta il contenitore verso il basso */
+            margin-right: 30px; /* Sposta il contenitore a destra */
+
+        }
+
+        .image-slider img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 0px;
+            display: none; /* Nasconde tutte le immagini inizialmente */
+        }
+
+        .image-slider img.active {
+            display: block; /* Mostra solo l'immagine attiva */
+        }
 </style>
     <script>
     function toggleSubcategories(id) {
@@ -99,30 +123,45 @@
     </a>
     <div class="container">
         <div class="category">
-            <h2 onclick="toggleSubcategories('progettazione')">Progettazione</h2>
+            <h2 onclick="toggleSubcategories('progettazione')">Progettazione</h2><script>
+    function toggleSubcategories(id) {
+        // Chiudi tutte le sottocategorie
+        const allSubcategories = document.querySelectorAll('.subcategory');
+        allSubcategories.forEach(subcategory => {
+            if (subcategory.id !== id) {
+                subcategory.style.display = "none";
+            }
+        });
+
+        // Apri o chiudi la sottocategoria selezionata
+        const subcategory = document.getElementById(id);
+
+        if (subcategory.style.display === "none" || subcategory.style.display === "") {
+            subcategory.style.display = "block"; // Mostra la sottocategoria
+        } else {
+            subcategory.style.display = "none"; // Nasconde la sottocategoria
+        }
+    }
+</script>
+
             <div class="subcategory" id="progettazione">
                 <p>Industriale</p>
                 <p>Architettonica</p>
                 <p>Urbana</p>
-                <img src="Earth School.jpg" alt="Immagine Progettazione" class="subcategory-image">
             </div>
         </div>
         <div class="category">
             <h2 onclick="toggleSubcategories('gestione')">Gestione</h2>
             <div class="subcategory" id="gestione">
                 <p>Pratiche edilizie</p>
-                <p>Computazione & Contabilità</p>
-                <img src="Museo Helsinky.jpg" alt="Immagine Gestione" class="subcategory-image">
-            </div>
+                <p>Computazione & Contabilità</p>            </div>
         </div>
         <div class="category">
             <h2 onclick="toggleSubcategories('consulenza')">Consulenza</h2>
             <div class="subcategory" id="consulenza">
                 <p>BIM</p>
                 <p>Forniture</p>
-                <p>Appalti e gare tecniche</p>
-                <img src="Studio fisioterapia.jpg" alt="Immagine Consulenza" class="subcategory-image">
-            </div>
+                <p>Appalti e gare tecniche</p>            </div>
         </div>
         <div class="category">
             <h2 onclick="toggleSubcategories('altro')">+</h2>
@@ -130,8 +169,31 @@
                 <p>Renderizzazioni</p>
                 <p>Prototipazione</p>
                 <p>Ricerca</p>
-                <img src="altro.jpg" alt="Immagine Altro" class="subcategory-image">
-            </div>
+        </div>
+        <div class="image-slider" id="image-slider">
+            <img src="Earth School.jpg" alt="Progettazione" class="active">
+            <img src="Museo Helsinky.jpg" alt="Gestione">
+            <img src="Studio fisioterapia.jpg" alt="Consulenza">
+        </div>
+    
+        <script>
+            let currentImageIndex = 0;
+            const images = document.querySelectorAll('.image-slider img');
+            const totalImages = images.length;
+    
+            // Funzione per mostrare l'immagine successiva
+            function showNextImage() {
+                images[currentImageIndex].classList.remove('active'); // Nasconde l'immagine attuale
+                currentImageIndex = (currentImageIndex + 1) % totalImages; // Incrementa l'indice
+                images[currentImageIndex].classList.add('active'); // Mostra la nuova immagine
+            }
+    
+            // Cambia immagine ogni 5 secondi
+            setInterval(showNextImage, 5000);
+    
+            // Aggiungi evento click per cambiare immagine manualmente
+            document.getElementById('image-slider').addEventListener('click', showNextImage);
+        </script>
         </div>
     </div>
 </body>

@@ -75,10 +75,10 @@
       color: white;
       display: none; /* Nasconde il testo inizialmente */
       text-align:left; /* Allinea il testo a sinistra */;
-      position: relative; /* Posizionamento relativo per allineamento */
+      position: absolute; /* Posizionamento relativo per allineamento */
       width: 350px; /* Stessa larghezza della colonna "Chi siamo" */
-      margin-left: 0; /* Allineato alla colonna di sinistra */
-      left: 75px; /* Sposta il testo a destra della colonna "Chi siamo" */
+      left: 347px; /* Sposta il testo a destra della colonna "Chi siamo" */
+      top: 290px; /* Posiziona il testo sotto l'immagine */
       word-wrap: break-word; /* Evita la sovrapposizione del testo */
     }
 
@@ -87,7 +87,27 @@
       line-height: 1.5; /* Migliora la leggibilità */
       overflow: visible; /* Assicura che il testo non venga troncato */
     }
-  </style>
+
+    /* Media query per dispositivi mobili */
+    @media (max-width: 768px) {
+        .text-container {
+            position: fixed; /* Fissa il contenitore rispetto alla finestra */
+            top: 0;
+            left: 0;
+            width: 100%; /* Occupa tutta la larghezza dello schermo */
+            height: 100%; /* Occupa tutta l'altezza dello schermo */
+            background-color: rgba(0, 0, 0, 0); /* Sfondo semi-trasparente */
+            color: white;
+            padding: 20px; /* Aggiunge spazio interno */
+            overflow-y: auto; /* Aggiunge lo scorrimento verticale se necessario */
+            z-index: 10; /* Porta il contenitore in primo piano */
+        }
+
+        .subcategory p {
+            font-size: 16px; /* Aumenta la dimensione del testo per una migliore leggibilità */
+        }
+    }
+</style>
 </head>
 <body>
     <img src="Logo_Bianco.png" alt="dejob" class="image-container">
@@ -107,8 +127,9 @@
             <div class="subcategory">
                 <p>Email: info@dejob.it</p>
                 <p>Telefono: +393489165934 / +393466212798</p>
-                <p>Indirizzo: <strong>Roma</strong> - Via Trionfale, 11886; 
-                <strong>Milano</strong> - Via Mecenate, 6</p>
+                <p>Indirizzo: <strong>Roma</strong> - Via Trionfale, 11886;
+                <strong>Milano</strong> - Via Mecenate, 6
+
             </div>
         </div>
     </div>

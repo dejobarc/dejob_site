@@ -5,216 +5,200 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dejob.it/servizi</title>
     <style>
-    body {
-        background-color: black;
-        color: rgb(255, 255, 255);
-        font-family: "Arial Narrow", Arial, condensed;
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        text-align: left;
-        padding: 30px;
-    }
-
-    .image-container {
-        display: inline-block;
-        width: 200px;
-        height: auto;
-        margin-bottom: 20px;
-    }
-
-    .container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .category {
-        margin-bottom: 0px;
-        width: 100%;
-        font-size: 16px;
-    }
-
-    .category h2 {
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-        background-color: #000000;
-        border: 0;
-        text-align: left;
-        font-weight: bold;
-        font-size: 16px;
-    }
-
-    .subcategory {
-        display: none; /* Nasconde la sottocategoria inizialmente */
-        margin-top: 8px;
-        margin-bottom: 8px;
-        margin-left: 0;
-        padding: 0;
-    }
-
-    .subcategory p {
-        margin: 0;
-        text-align: left;
-        font-size: 14px;
-        font-weight: normal;
-    }
-
-    .subcategory-image {
-        margin-top: 10px;
-        width: 100%; /* L'immagine occupa tutta la larghezza della sottocategoria */
-        height: auto;
-        border-radius: 0px; /* Angoli arrotondati */
-    }
-            .image-slider {
-            width: 50%; /* Contenitore delle immagini sulla destra */
-            height: 300px; /* Altezza del contenitore */
-            display: absolute;
+        body {
+            background-color: black;
+            color: rgb(255, 255, 255);
+            font-family: "Arial Narrow", Arial, condensed;
+            margin: 0;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
-            position: absolute;
-            margin-left: 700px; /* Sposta il contenitore a destra */
-            top: 180px; /* Sposta il contenitore verso il basso */
-            margin-right: 20px; /* Sposta il contenitore a destra */
-
+            text-align: left;
         }
 
-        .image-slider img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: cover;
-            border-radius: 0px;
-            position: absolute; /* Sovrappone le immagini */
-            opacity: 0; /* Nasconde tutte le immagini inizialmente */
-            transition: opacity 1s ease-in-out; /* Transizione di dissolvenza */
-    }
-
-        .image-slider img.active {
-        opacity: 1; /* Mostra l'immagine attiva */
+        .image-container {
+            display: block;
+            width: 200px; /* Larghezza del logo */
+            height: auto;
+            margin-bottom: 20px;
         }
 
-            /* Layout per dispositivi mobili */
-    @media (max-width: 768px) {
-        body {
-            flex-direction: column; /* Dispone gli elementi in colonna */
-            align-items: flex-start; /* Allinea gli elementi */
+        .content-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px; /* Spazio tra le colonne */
+            margin-top: 0px;
+            width: 100%; /* Adatta il contenitore alla larghezza dello schermo */
         }
 
-        .container {
-            width: 100%; /* Le categorie occupano tutta la larghezza */
+        .categories-container {
+            flex: 1; /* La colonna delle categorie occupa lo spazio disponibile */
+            max-width: 400px; /* Larghezza massima della colonna */
+        }
+
+        .category {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .category h2 {
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            border: 0;
+            text-align: left;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .subcategory {
+            display: none; /* Nasconde la sottocategoria inizialmente */
+            margin-top: 8px;
+            margin-bottom: 8px;
+            margin-left: 0;
+            padding: 0;
+        }
+
+        .subcategory p {
+            margin: 0;
+            text-align: left;
+            font-size: 14px;
+            font-weight: normal;
         }
 
         .image-slider {
-            width: 100%; /* Lo slider occupa tutta la larghezza dello schermo */
-            margin-top: 20px; /* Spazio sopra lo slider */
+            flex: 2; /* La colonna dello slider occupa lo spazio disponibile */
+            max-width: 600px; /* Larghezza massima dello slider */
+            height: 200px; /* Altezza fissa dello slider */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden; /* Nasconde le parti delle immagini fuori dal contenitore */
+            background-color: rgba(0, 0, 0, 0.8); /* Sfondo per lo slider */
         }
-    }
-</style>
-</style>
-    <script>
-    function toggleSubcategories(id) {
-        // Chiudi tutte le sottocategorie
-        const allSubcategories = document.querySelectorAll('.subcategory');
-        allSubcategories.forEach(subcategory => {
-            if (subcategory.id !== id) {
-                subcategory.style.display = "none";
+
+        .image-slider img {
+            width: 100%; /* L'immagine occupa tutta la larghezza del contenitore */
+            height: 100%; /* L'immagine occupa tutta l'altezza del contenitore */
+            object-fit: cover; /* Adatta l'immagine senza distorsioni */
+            position: absolute; /* Sovrappone le immagini */
+            opacity: 0; /* Nasconde tutte le immagini inizialmente */
+            transition: opacity 1s ease-in-out; /* Transizione di dissolvenza */
+        }
+
+        .image-slider img.active {
+            opacity: 1; /* Mostra solo l'immagine attiva */
+        }
+
+        /* Layout per dispositivi mobili */
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column; /* Dispone le colonne in colonna (una sopra l'altra) */
+                align-items: center; /* Centra i contenitori */
             }
-        });
 
-        // Apri o chiudi la sottocategoria selezionata
-        const subcategory = document.getElementById(id);
+            .categories-container {
+                width: 100%; /* La colonna delle categorie occupa tutta la larghezza */
+                max-width: none; /* Rimuove il limite massimo di larghezza */
+                margin-bottom: 20px; /* Aggiunge spazio sotto la colonna */
+            }
 
-        if (subcategory.style.display === "none" || subcategory.style.display === "") {
-            subcategory.style.display = "block"; // Mostra la sottocategoria
-        } else {
-            subcategory.style.display = "none"; // Nasconde la sottocategoria
+            .image-slider {
+                width: 100%; /* Lo slider occupa tutta la larghezza dello schermo */
+                height: auto; /* L'altezza si adatta proporzionalmente */
+                max-width: none; /* Rimuove il limite massimo di larghezza */
+            }
+
+            .image-slider img {
+                width: 100%; /* L'immagine occupa tutta la larghezza dello slider */
+                height: auto; /* L'altezza si adatta proporzionalmente */
+                object-fit: cover; /* Adatta l'immagine senza distorsioni */
+            }
         }
-    }
-</script>
+    </style>
 </head>
 <body>
     <a href="index.html">
         <img src="Logo_Bianco.png" alt="dejob" class="image-container">
     </a>
-    <div class="container">
-        <div class="category">
-            <h2 onclick="toggleSubcategories('progettazione')">Progettazione</h2><script>
-    function toggleSubcategories(id) {
-        // Chiudi tutte le sottocategorie
-        const allSubcategories = document.querySelectorAll('.subcategory');
-        allSubcategories.forEach(subcategory => {
-            if (subcategory.id !== id) {
-                subcategory.style.display = "none";
-            }
-        });
-
-        // Apri o chiudi la sottocategoria selezionata
-        const subcategory = document.getElementById(id);
-
-        if (subcategory.style.display === "none" || subcategory.style.display === "") {
-            subcategory.style.display = "block"; // Mostra la sottocategoria
-        } else {
-            subcategory.style.display = "none"; // Nasconde la sottocategoria
-        }
-    }
-</script>
-
-            <div class="subcategory" id="progettazione">
-                <p>Industriale</p>
-                <p>Architettonica</p>
-                <p>Urbana</p>
+    <div class="content-container">
+        <div class="categories-container">
+            <div class="category">
+                <h2 onclick="toggleSubcategories('progettazione')">Progettazione</h2>
+                <div class="subcategory" id="progettazione">
+                    <p>Industriale</p>
+                    <p>Architettonica</p>
+                    <p>Urbana</p>
+                </div>
             </div>
-        </div>
-        <div class="category">
-            <h2 onclick="toggleSubcategories('gestione')">Gestione</h2>
-            <div class="subcategory" id="gestione">
-                <p>Pratiche edilizie</p>
-                <p>Computazione & Contabilità</p>            </div>
-        </div>
-        <div class="category">
-            <h2 onclick="toggleSubcategories('consulenza')">Consulenza</h2>
-            <div class="subcategory" id="consulenza">
-                <p>BIM</p>
-                <p>Forniture</p>
-                <p>Appalti e gare tecniche</p>            </div>
-        </div>
-        <div class="category">
-            <h2 onclick="toggleSubcategories('altro')">+</h2>
-            <div class="subcategory" id="altro">
-                <p>Renderizzazioni</p>
-                <p>Prototipazione</p>
-                <p>Ricerca</p>
+            <div class="category">
+                <h2 onclick="toggleSubcategories('gestione')">Gestione</h2>
+                <div class="subcategory" id="gestione">
+                    <p>Pratiche edilizie</p>
+                    <p>Computazione & Contabilità</p>
+                </div>
+            </div>
+            <div class="category">
+                <h2 onclick="toggleSubcategories('consulenza')">Consulenza</h2>
+                <div class="subcategory" id="consulenza">
+                    <p>BIM</p>
+                    <p>Forniture</p>
+                    <p>Appalti e gare tecniche</p>
+                </div>
+            </div>
+            <div class="category">
+                <h2 onclick="toggleSubcategories('altro')">Altro</h2>
+                <div class="subcategory" id="altro">
+                    <p>Renderizzazioni</p>
+                    <p>Prototipazione</p>
+                    <p>Ricerca</p>
+                </div>
+            </div>
         </div>
         <div class="image-slider" id="image-slider">
             <img src="Earth School.jpg" alt="Progettazione" class="active">
             <img src="Museo Helsinky.jpg" alt="Gestione">
             <img src="Studio fisioterapia.jpg" alt="Consulenza">
         </div>
-    
-        <script>
-    let currentImageIndex = 0;
-    const images = document.querySelectorAll('.image-slider img');
-    const totalImages = images.length;
-
-    // Funzione per mostrare l'immagine successiva con transizione
-    function showNextImage() {
-        images[currentImageIndex].classList.remove('active'); // Rimuove la classe "active" dall'immagine attuale
-        currentImageIndex = (currentImageIndex + 1) % totalImages; // Incrementa l'indice
-        images[currentImageIndex].classList.add('active'); // Aggiunge la classe "active" alla nuova immagine
-    }
-
-    // Cambia immagine ogni 5 secondi
-    setInterval(showNextImage, 5000);
-
-    // Aggiungi evento click per cambiare immagine manualmente
-    document.getElementById('image-slider').addEventListener('click', showNextImage);
-</script>
-        </div>
     </div>
+    <script>
+        function toggleSubcategories(id) {
+            const allSubcategories = document.querySelectorAll('.subcategory');
+            allSubcategories.forEach(subcategory => {
+                if (subcategory.id !== id) {
+                    subcategory.style.display = "none";
+                }
+            });
+
+            const subcategory = document.getElementById(id);
+            if (subcategory.style.display === "none" || subcategory.style.display === "") {
+                subcategory.style.display = "block";
+            } else {
+                subcategory.style.display = "none";
+            }
+        }
+
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.image-slider img');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % totalImages;
+            images[currentImageIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 5000);
+
+        document.getElementById('image-slider').addEventListener('click', showNextImage);
+    </script>
+    <footer style="text-align: center; color: white; font-family: 'Arial Narrow', Arial, sans-serif; margin-top: 20px;
+    font-size: small;">
+        © 2025 deJob. Tutti i diritti riservati.
+    </footer>
 </body>
 </html>

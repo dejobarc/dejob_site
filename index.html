@@ -8,7 +8,7 @@
     body {
       margin: 0;
       height: 100vh;
-      background-color: black;
+      background-color: rgb(0, 0, 0);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -69,23 +69,22 @@
     }
 
     .text-container {
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: normal;
-      color: white;
-      display: none; /* Nasconde il testo inizialmente */
-      text-align:left; /* Allinea il testo a sinistra */;
-      position: absolute; /* Posizionamento relativo per allineamento */
-      width: 350px; /* Stessa larghezza della colonna "Chi siamo" */
-      left: 347px; /* Sposta il testo a destra della colonna "Chi siamo" */
-      top: 290px; /* Posiziona il testo sotto l'immagine */
-      word-wrap: break-word; /* Evita la sovrapposizione del testo */
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: normal;
+        color: white;
+        display: none; /* Nasconde il testo inizialmente */
+        text-align: left;
+        position: relative; /* Posizionamento relativo per allineamento */
+        width: 400px; /* Stessa larghezza della colonna "Chi siamo" */
+        margin-left: 200px; /* Allineato alla colonna di sinistra */
+        margin-right: 0px; /* Aumenta il margine destro */
+        word-wrap: break-word; /* Evita la sovrapposizione del testo */
     }
 
     .subcategory p {
-      margin: 0;
-      line-height: 1.5; /* Migliora la leggibilità */
-      overflow: visible; /* Assicura che il testo non venga troncato */
+        margin: 0;
+        line-height: 1.5; /* Migliora la leggibilità */
     }
   </style>
 </head>
@@ -106,10 +105,8 @@
         <div class="category">
             <div class="subcategory">
                 <p>Email: info@dejob.it</p>
-                <p>Telefono: +393489165934 / +393466212798</p>
-                <p>Indirizzo: <strong>Roma</strong> - Via Trionfale, 11886;
-                <strong>Milano</strong> - Via Mecenate, 6
-
+                <p>Telefono: +39 348 9165 934 / +39 346 6212 798</p>
+                <p>Indirizzo: <strong>Roma</strong> - Via Trionfale, 11886; <strong>Milano</strong> - Via Mecenate, 6</p>
             </div>
         </div>
     </div>
@@ -128,6 +125,10 @@
         }
       });
     </script>
+    <footer style="text-align: center; color: white; font-family: 'Arial Narrow', Arial, sans-serif; margin-top: 20px;
+    font-size: small;">
+        © 2025 deJob. Tutti i diritti riservati.
+    </footer>
 </body>
 </html>
 

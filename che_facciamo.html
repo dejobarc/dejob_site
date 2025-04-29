@@ -73,14 +73,14 @@
     }
             .image-slider {
             width: 50%; /* Contenitore delle immagini sulla destra */
-            height: 100%;
+            height: 300px; /* Altezza del contenitore */
             display: absolute;
             justify-content: flex-start;
             align-items: flex-start;
             position: absolute;
-            margin-left: 385px; /* Sposta il contenitore a destra */
+            margin-left: 700px; /* Sposta il contenitore a destra */
             top: 180px; /* Sposta il contenitore verso il basso */
-            margin-right: 30px; /* Sposta il contenitore a destra */
+            margin-right: 20px; /* Sposta il contenitore a destra */
 
         }
 
@@ -89,18 +89,20 @@
             max-height: 100%;
             object-fit: cover;
             border-radius: 0px;
-            display: none; /* Nasconde tutte le immagini inizialmente */
-        }
+            position: absolute; /* Sovrappone le immagini */
+            opacity: 0; /* Nasconde tutte le immagini inizialmente */
+            transition: opacity 1s ease-in-out; /* Transizione di dissolvenza */
+    }
 
         .image-slider img.active {
-            display: block; /* Mostra solo l'immagine attiva */
+        opacity: 1; /* Mostra l'immagine attiva */
         }
-        
+
             /* Layout per dispositivi mobili */
     @media (max-width: 768px) {
         body {
             flex-direction: column; /* Dispone gli elementi in colonna */
-            align-items: center; /* Centra gli elementi */
+            align-items: flex-start; /* Allinea gli elementi */
         }
 
         .container {
@@ -195,23 +197,23 @@
         </div>
     
         <script>
-            let currentImageIndex = 0;
-            const images = document.querySelectorAll('.image-slider img');
-            const totalImages = images.length;
-    
-            // Funzione per mostrare l'immagine successiva
-            function showNextImage() {
-                images[currentImageIndex].classList.remove('active'); // Nasconde l'immagine attuale
-                currentImageIndex = (currentImageIndex + 1) % totalImages; // Incrementa l'indice
-                images[currentImageIndex].classList.add('active'); // Mostra la nuova immagine
-            }
-    
-            // Cambia immagine ogni 5 secondi
-            setInterval(showNextImage, 5000);
-    
-            // Aggiungi evento click per cambiare immagine manualmente
-            document.getElementById('image-slider').addEventListener('click', showNextImage);
-        </script>
+    let currentImageIndex = 0;
+    const images = document.querySelectorAll('.image-slider img');
+    const totalImages = images.length;
+
+    // Funzione per mostrare l'immagine successiva con transizione
+    function showNextImage() {
+        images[currentImageIndex].classList.remove('active'); // Rimuove la classe "active" dall'immagine attuale
+        currentImageIndex = (currentImageIndex + 1) % totalImages; // Incrementa l'indice
+        images[currentImageIndex].classList.add('active'); // Aggiunge la classe "active" alla nuova immagine
+    }
+
+    // Cambia immagine ogni 5 secondi
+    setInterval(showNextImage, 5000);
+
+    // Aggiungi evento click per cambiare immagine manualmente
+    document.getElementById('image-slider').addEventListener('click', showNextImage);
+</script>
         </div>
     </div>
 </body>

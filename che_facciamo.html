@@ -72,13 +72,13 @@
         border-radius: 0px; /* Angoli arrotondati */
     }
             .image-slider {
-            width: 100%; /* Contenitore delle immagini sulla destra */
+            width: 50%; /* Contenitore delle immagini sulla destra */
             height: 100%;
             display: absolute;
             justify-content: flex-start;
             align-items: flex-start;
             position: absolute;
-            margin-left: 400px; /* Sposta il contenitore a destra */
+            margin-left: 385px; /* Sposta il contenitore a destra */
             top: 180px; /* Sposta il contenitore verso il basso */
             margin-right: 30px; /* Sposta il contenitore a destra */
 
@@ -95,6 +95,24 @@
         .image-slider img.active {
             display: block; /* Mostra solo l'immagine attiva */
         }
+        
+            /* Layout per dispositivi mobili */
+    @media (max-width: 768px) {
+        body {
+            flex-direction: column; /* Dispone gli elementi in colonna */
+            align-items: center; /* Centra gli elementi */
+        }
+
+        .container {
+            width: 100%; /* Le categorie occupano tutta la larghezza */
+        }
+
+        .image-slider {
+            width: 100%; /* Lo slider occupa tutta la larghezza dello schermo */
+            margin-top: 20px; /* Spazio sopra lo slider */
+        }
+    }
+</style>
 </style>
     <script>
     function toggleSubcategories(id) {

@@ -19,7 +19,7 @@
         }
 
         footer {
-        position: fixed; /* Fissa il footer rispetto alla finestra */
+        position: relative; /* Fissa il footer rispetto alla finestra */
         bottom: 0; /* Posiziona il footer in basso */
         left: 50%; /* Centra il footer orizzontalmente */
         transform: translateX(-50%); /* Corregge il centraggio */
@@ -85,8 +85,8 @@
 
         .image-slider {
             flex: 2; /* La colonna dello slider occupa lo spazio disponibile */
-            max-width: 800px; /* Larghezza massima dello slider */
-            height: 200px; /* Altezza fissa dello slider */
+            max-width: 700px; /* Larghezza massima dello slider */
+            height: 500px; /* Altezza fissa dello slider */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -107,6 +107,7 @@
         .image-slider img.active {
             opacity: 1; /* Mostra solo l'immagine attiva */
         }
+        
         /* Layout per dispositivi mobili */
         @media (max-width: 768px) {
     .content-container {

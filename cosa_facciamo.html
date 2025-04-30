@@ -85,8 +85,8 @@
 
         .image-slider {
             flex: 2; /* La colonna dello slider occupa lo spazio disponibile */
-            max-width: 700px; /* Larghezza massima dello slider */
-            height: 500px; /* Altezza fissa dello slider */
+            max-width: 600px; /* Larghezza massima dello slider */
+            height: 400px; /* Altezza fissa dello slider */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -149,6 +149,24 @@
 
 }
     </style>
+    <style>
+    .slider-control {
+        position: absolute;
+        top: 0;
+        width: 50%; /* Ogni area occupa metà dello slider */
+        height: 100%; /* Occupa tutta l'altezza dello slider */
+        cursor: pointer;
+        z-index: 10; /* Porta le aree cliccabili sopra le immagini */
+    }
+
+    .slider-control.left {
+        left: 0; /* Posiziona l'area a sinistra */
+    }
+
+    .slider-control.right {
+        right: 0; /* Posiziona l'area a destra */
+    }
+</style>
 </head>
 <body>
     <a href="index.html">
@@ -189,16 +207,17 @@
             </div>
         </div>
         <div class="image-slider" id="image-slider">
+            <div class="slider-control left" id="slider-left"></div>
+            <div class="slider-control right" id="slider-right"></div>
             <img src="img/Scuola_Earth_School.jpg" alt="Scuola" class="active">
             <img src="img/Museo_Helsinky.jpg" alt="Museo">
             <img src="img/Mixed-Use_Monticchio.jpg" alt="Mixed-Use">
-            <img src="img/Residenziale_Schizzo_Cucina.jpg" alt="Residenziale">
+            <img src="img/Residenziale_Schizzo_Cucina.png" alt="Residenziale">
             <img src="img/Piazza_Polpenazze.jpg" alt="Piazza">
-            <img src="img/Residenziale_Schizzo_Salotto.jpg" alt="Residenziale">
-            <img src="img/Residezionale_Future_House_1.jpg" alt="Residenziale">
+            <img src="img/Residenziale_Schizzo_Salotto.png" alt="Residenziale">
+            <img src="img/Resideziale_Future_House_1.jpg" alt="Residenziale">
             <img src="img/Retail_Studio fisioterapia.jpg" alt="Retail">
-            <img src="img/Residenziale_Schizzo_Bagno.jpg" alt="Residenziale">
-            <img src="img/Residezionale_Future_House_2.jpg" alt="Residenziale">
+            <img src="img/Resideziale_Future_House_2.jpg" alt="Residenziale">
         </div>
     </div>
     <script>
@@ -219,21 +238,42 @@
         }
 
         let currentImageIndex = 0;
-const images = document.querySelectorAll('.image-slider img');
-const totalImages = images.length;
+    const images = document.querySelectorAll('.image-slider img');
+    const totalImages = images.length;
 
-// Funzione per mostrare l'immagine successiva con transizione
-function showNextImage() {
-    images[currentImageIndex].classList.remove('active'); // Rimuove la classe "active" dall'immagine attuale
-    currentImageIndex = (currentImageIndex + 1) % totalImages; // Incrementa l'indice
-    images[currentImageIndex].classList.add('active'); // Aggiunge la classe "active" alla nuova immagine
-}
+    // Funzione per mostrare l'immagine successiva
+    function showNextImage() {
+        images[currentImageIndex].classList.remove('active'); // Rimuove la classe "active" dall'immagine attuale
+        currentImageIndex = (currentImageIndex + 1) % totalImages; // Incrementa l'indice
+        images[currentImageIndex].classList.add('active'); // Aggiunge la classe "active" alla nuova immagine
+        startImageTimer(); // Avvia il timer per la prossima immagine
+    }
 
-// Cambia immagine ogni 5 secondi
-setInterval(showNextImage, 5000);
+    // Funzione per mostrare l'immagine precedente
+    function showPreviousImage() {
+        images[currentImageIndex].classList.remove('active'); // Rimuove la classe "active" dall'immagine attuale
+        currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages; // Decrementa l'indice
+        images[currentImageIndex].classList.add('active'); // Aggiunge la classe "active" alla nuova immagine
+        startImageTimer(); // Avvia il timer per la prossima immagine
+    }
 
-// Aggiungi evento click per cambiare immagine manualmente
-document.getElementById('image-slider').addEventListener('click', showNextImage);
+    // Funzione per avviare il timer
+    function startImageTimer() {
+        clearTimeout(timer); // Cancella il timer precedente
+        timer = setTimeout(showNextImage, 5000); // Cambia immagine dopo 5 secondi
+    }
+
+    // Aggiungi evento click per cambiare immagine manualmente
+    document.getElementById('slider-right').addEventListener('click', () => {
+        showNextImage(); // Mostra l'immagine successiva
+    });
+
+    document.getElementById('slider-left').addEventListener('click', () => {
+        showPreviousImage(); // Mostra l'immagine precedente
+    });
+
+    // Avvia il timer iniziale
+    let timer = setTimeout(showNextImage, 5000);
     </script>
     <footer style="text-align: center; color: white; font-family: 'Arial Narrow', Arial, sans-serif; margin-top: 20px;
     font-size: small;">

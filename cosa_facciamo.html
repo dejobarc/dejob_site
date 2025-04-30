@@ -42,14 +42,14 @@
         .content-container {
             display: flex;
             align-items: flex-start;
-            gap: 10px; /* Spazio tra le colonne */
+            gap: 20px; /* Spazio tra le colonne */
             margin-top: 0px;
             width: 100%; /* Adatta il contenitore alla larghezza dello schermo */
         }
 
         .categories-container {
             flex: 1; /* La colonna delle categorie occupa lo spazio disponibile */
-            max-width: 400px; /* Larghezza massima della colonna */
+            max-width: 60%; /* Larghezza massima della colonna delle categorie */
         }
 
         .category {
@@ -84,8 +84,8 @@
         }
 
         .image-slider {
-            flex: 2; /* La colonna dello slider occupa lo spazio disponibile */
-            max-width: 600px; /* Larghezza massima dello slider */
+            flex: 1; /* La colonna dello slider occupa lo spazio disponibile */
+            max-width: 100%; /* Larghezza massima dello slider */
             height: 400px; /* Altezza fissa dello slider */
             display: flex;
             justify-content: center;
@@ -107,47 +107,23 @@
         .image-slider img.active {
             opacity: 1; /* Mostra solo l'immagine attiva */
         }
-        
+
         /* Layout per dispositivi mobili */
         @media (max-width: 768px) {
-    .content-container {
-        flex-direction: column;
-        align-items: center;
-    }
+            .content-container {
+                flex-direction: column; /* Dispone i contenitori in colonna */
+                align-items: center; /* Centra i contenitori */
+            }
 
-    .categories-container {
-        width: 100%;
-        max-width: none;
-        margin-bottom: 20px;
-    }
+            .categories-container,
+            .image-slider {
+                max-width: 100%; /* I contenitori occupano tutta la larghezza */
+            }
 
-    .image-slider {
-        display: flex;
-        width: 100%;
-        height: 200px;
-        max-width: none;
-        margin-top: 20px;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .image-slider img {
-        width: 100%; /* Corretto qui */
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .image-slider {
-    min-height: 200px;
-}
-
-    footer {
-            position: fixed; /* Rimuove il posizionamento fisso */
-            margin-top: 20px; /* Aggiunge spazio sopra il footer */
-            width: 100%; /* Occupa tutta la larghezza dello schermo */
-            text-align: center; /* Centra il testo */
+            .image-slider {
+                height: 200px; /* Altezza ridotta per dispositivi mobili */
+            }
         }
-
-}
     </style>
     <style>
     .slider-control {
@@ -260,7 +236,7 @@
     // Funzione per avviare il timer
     function startImageTimer() {
         clearTimeout(timer); // Cancella il timer precedente
-        timer = setTimeout(showNextImage, 5000); // Cambia immagine dopo 5 secondi
+        timer = setTimeout(showNextImage, 8000); // Cambia immagine dopo 8 secondi
     }
 
     // Aggiungi evento click per cambiare immagine manualmente

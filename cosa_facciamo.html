@@ -118,10 +118,12 @@
             .categories-container,
             .image-slider {
                 max-width: 100%; /* I contenitori occupano tutta la larghezza */
+                width: 100%; /* I contenitori occupano tutta la larghezza */
             }
 
             .image-slider {
                 height: 200px; /* Altezza ridotta per dispositivi mobili */
+                min-height: 150px;
             }
         }
     </style>
@@ -189,10 +191,11 @@
             <img src="img/Museo_Helsinky.jpg" alt="Museo">
             <img src="img/Mixed-Use_Monticchio.jpg" alt="Mixed-Use">
             <img src="img/Residenziale_Schizzo_Cucina.png" alt="Residenziale">
-            <img src="img/Piazza_Polpenazze.jpg" alt="Piazza">
+            <img src="img/Piazza_Polpenazze_1.jpg" alt="Piazza">
             <img src="img/Residenziale_Schizzo_Salotto.png" alt="Residenziale">
             <img src="img/Resideziale_Future_House_1.jpg" alt="Residenziale">
             <img src="img/Retail_Studio fisioterapia.jpg" alt="Retail">
+            <img src="img/Piazza_Polpenazze_2.jpg" alt="Piazza">
             <img src="img/Resideziale_Future_House_2.jpg" alt="Residenziale">
         </div>
     </div>
@@ -251,9 +254,32 @@
     // Avvia il timer iniziale
     let timer = setTimeout(showNextImage, 5000);
     </script>
-    <footer style="text-align: center; color: white; font-family: 'Arial Narrow', Arial, sans-serif; margin-top: 20px;
-    font-size: small;">
-        © 2025 deJob. Tutti i diritti riservati.
-    </footer>
+    <div class="back-to-index">
+    <a href="index.html">
+        &#8592;
+    </a>
+</div>
+<style>
+    .back-to-index {
+        text-align: center;
+        margin-bottom: 20px; /* Spazio tra la freccia e il footer */
+    }
+
+    .back-to-index a {
+        color: white;
+        text-decoration: none;
+        font-family: 'Arial Narrow', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .back-to-index a:hover {
+        color: rgb(255, 255, 255); /* Cambia colore al passaggio del mouse */
+    }
+</style>
+<footer style="text-align: center; color: rgb(255, 255, 255); font-family: 'Arial Narrow', Arial, sans-serif; margin-top: 20px;
+font-size:medium ;font-style: bold;">
+    © 2025 deJob. Tutti i diritti riservati.
+</footer>
 </body>
 </html>

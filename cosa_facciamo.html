@@ -281,5 +281,13 @@
 font-size:medium ;font-style: bold;">
     © 2025 deJob. Tutti i diritti riservati.
 </footer>
+<script>
+    // Disabilita il menu contestuale sulle immagini
+    document.addEventListener('contextmenu', function (event) {
+        if (event.target.tagName === 'IMG') {
+            event.preventDefault(); // Impedisce l'apertura del menu contestuale
+        }
+    });
+</script>
 </body>
 </html>
